@@ -1,0 +1,37 @@
+name: testing
+version: '0.1.0.0'
+category: Web
+author: Philipp Balzarek
+maintainer: philipp.balzarek@web.de
+copyright: 2017 Nejla AB
+license: BSD3
+github: githubuser/testing
+extra-source-files:
+- README.md
+library:
+  source-dirs: src
+  exposed-modules:
+  - Lib
+  dependencies:
+  - base >=4.7 && <5
+  - persistent
+  - persistent-template
+  - text
+  - mtl
+
+tests:
+  testing-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - monad-logger
+    - mtl
+    - persistent-sqlite
+    - QuickCheck
+    - hspec
+    - hspec-expectations

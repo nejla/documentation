@@ -1,0 +1,86 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           nejlacommon-tutorial
+version:        0.0.0
+synopsis:       An example project
+description:    An example project
+maintainer:     Philipp Balzarek
+build-type:     Simple
+
+library
+  exposed-modules:
+      RunMain
+  other-modules:
+      Paths_nejlacommon_tutorial
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      aeson
+    , async
+    , base
+    , bytestring
+    , configurator
+    , containers
+    , data-default
+    , esqueleto
+    , gitrev
+    , interpolate
+    , lens
+    , monad-logger
+    , mtl
+    , nejla-common
+    , persistent
+    , persistent-postgresql
+    , persistent-template
+    , postgresql-simple
+    , servant-server
+    , text
+    , time
+    , unix
+    , unordered-containers
+    , wai
+    , wai-extra
+    , warp
+  default-language: Haskell2010
+
+executable nejlacommon-tutorial
+  main-is: Main.hs
+  other-modules:
+      Paths_nejlacommon_tutorial
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -rtsopts -threaded -with-rtsopts=-N -Wall
+  build-depends:
+      base
+    , interpolate
+    , mtl
+    , nejlacommon-tutorial
+  default-language: Haskell2010
+
+test-suite nejlacommon-tutorial-test-suite
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_nejlacommon_tutorial
+  hs-source-dirs:
+      test-suite
+  ghc-options: -Wall -rtsopts -threaded -with-rtsopts=-N
+  build-depends:
+      base
+    , hedgehog
+    , hspec
+    , hspec-core
+    , hspec-wai
+    , hspec-wai-json
+    , interpolate
+    , mtl
+    , nejla-common
+    , nejlacommon-tutorial
+    , tasty
+    , tasty-hspec
+  default-language: Haskell2010

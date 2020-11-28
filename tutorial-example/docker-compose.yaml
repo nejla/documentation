@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:12.3
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+  app:
+    image: nejlacommon-tutorial
+    environment:
+      - APP_EMAIL=testuser@example.com
+      - DB_HOST=database
+      - DB_USER=postgres
+    ports:
+      - 8080:80

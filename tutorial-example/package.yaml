@@ -1,0 +1,78 @@
+name: nejlacommon-tutorial
+version: '0.0.0'
+synopsis: An example project
+description: An example project
+maintainer: Philipp Balzarek
+
+dependencies:
+  - base
+  - mtl
+  - interpolate
+
+ghc-options:
+  - -Wall
+
+executables:
+  nejlacommon-tutorial:
+    dependencies:
+    - nejlacommon-tutorial
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+    - -Wall
+    main: Main.hs
+    source-dirs: app
+    extra-source-files:
+    - CHANGELOG.md
+    - LICENSE.md
+    - README.md
+    - package.yaml
+    - stack.yaml
+
+library:
+  dependencies:
+  - aeson
+  - async
+  - bytestring
+  - configurator
+  - containers
+  - data-default
+  - esqueleto
+  - gitrev
+  - lens
+  - mtl
+  - monad-logger
+  - nejla-common
+  - persistent
+  - persistent-postgresql
+  - persistent-template
+  - postgresql-simple
+  - servant-server
+  - text
+  - time
+  - unix
+  - wai
+  - wai-extra
+  - warp
+  - unordered-containers
+  source-dirs: src
+
+tests:
+  nejlacommon-tutorial-test-suite:
+    dependencies:
+    - nejlacommon-tutorial
+    - tasty
+    - tasty-hspec
+    - hedgehog
+    - hspec
+    - hspec-core
+    - hspec-wai
+    - hspec-wai-json
+    - nejla-common
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+    main: Main.hs
+    source-dirs: test-suite
