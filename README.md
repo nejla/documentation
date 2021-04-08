@@ -8,3 +8,4 @@
 ## Further Topics
 
 * [Handling file uploads](Doc/Upload.md)
+* [Logging](Doc/Logging.md)
