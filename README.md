@@ -9,3 +9,4 @@
 
 * [Handling file uploads](Doc/Upload.md)
 * [Logging](Doc/Logging.md)
+* [Creating and renewing certificates with Let's encrypt](Doc/Letsencrypt.md)
